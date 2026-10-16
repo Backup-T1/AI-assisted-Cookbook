@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "../static/js/master.js"></script>
+    <link rel="stylesheet" href="../static/css/master.css">
+    <title>AI-assisted Recipie Browser</title>
+</head>
+<body>
+    <div class = navbar>
+        <container>
+            <left>
+                <img src = "../static/img/logo.png" id = logo alt="5byfive">
+                <a class = lB href="{{url_for('about')}}"> About </a>
+                <a class = lB  id = "active"> Saved Recipies </a>
+                <a class = lB href="{{url_for('search')}}"> Search Recipies </a>
+
+            </left>
+        </container>
+    </div>
+    <div class = results>
+        <table class = "save-res">
+            <tr>
+                <th colspan="7" id = label>Favorited Recipies</th>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Source</th>
+                <th>Rating</th>
+                <th>Reviews</th>
+                <th>Delete</th>
+
+            </tr>
+
+            {% for recipe in recipes %}
+            <tr>
+                <td>{{ recipe.url }}</td>
+                <td>{{ recipe.name }}</td>
+                <td>{{ recipe.author }}</td>
+                <td>{{ recipe.source }}</td>
+                <td>{{ recipe.rating }}</td>
+                <td>{{ recipe.reviews }}</td>
+                <td>
+            <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe.id) }}">
+                <button type="submit" class="save-del">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

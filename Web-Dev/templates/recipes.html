@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "../static/js/master.js"></script>
+    <link rel="stylesheet" href="../static/css/master.css">
+    <title>AI-assisted Recipie Browser</title>
+</head>
+<body>
+    <div class = navbar>
+        <container>
+            <left>
+                <img src = "../static/img/logo.png" id = logo alt="5byfive" tabindex="-9">
+                <a class = lB href="{{url_for('about')}}" tabindex="-2"> About </a>
+                <a href="{{url_for('saved')}}" class = lB tabindex="-3">Saved Recipies</a>
+                <a class = lB href="{{url_for('search')}}" tabindex="-4"> Search Recipies </a>
+                <a class = lB id = 'active' tabindex="-1"> Recipie Browser </a>
+            </left>
+        </container>
+    </div>
+    <div class = results>
+        <div class="about-res">
+            <h2>{{ recipe.name }}</h2>
+            <br>
+
+            <p><strong>Description:</strong> {{ recipe.description }}</p>
+            <br>
+
+            <p><strong>Author:</strong> {{ recipe.author }}</p>
+            <p><strong>Source:</strong> {{ recipe.source }}</p>
+            <p><strong>Rating:</strong> {{ recipe.rating }}</p>
+            <p><strong>Reviews:</strong> {{ recipe.reviews }}</p>
+            <p><strong>Prep Time:</strong> {{ recipe.prepT }}</p>
+            <p><strong>Cook Time:</strong> {{ recipe.cookT }}</p>
+            <p><strong>Total Time:</strong> {{ recipe.totalT }}</p>
+            <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+            <p><strong>Calories:</strong> {{ recipe.calories }}</p>
+            <p><strong>Category:</strong> {{ recipe.category }}</p>
+            <p><strong>Cuisine:</strong> {{ recipe.cuisine }}</p>
+
+            <br>
+            <h3>Ingredients</h3>
+            <p>{{ recipe.ingredients }}</p>
+
+            <br>
+            <h3>Notes</h3>
+            <p>{{ recipe.notes }}</p>
+
+            <br><br>
+
+            <form method="POST" action="{{ url_for('save_recipe') }}">
+                <input type="hidden" name="url" value="{{ recipe.url }}">
+                <input type="hidden" name="name" value="{{ recipe.name }}">
+                <input type="hidden" name="author" value="{{ recipe.author }}">
+                <input type="hidden" name="source" value="{{ recipe.source }}">
+                <input type="hidden" name="rating" value="{{ recipe.rating }}">
+                <input type="hidden" name="reviews" value="{{ recipe.reviews }}">
+                <input type="hidden" name="prepT" value="{{ recipe.prepT }}">
+                <input type="hidden" name="cookT" value="{{ recipe.cookT }}">
+                <input type="hidden" name="totalT" value="{{ recipe.totalT }}">
+                <input type="hidden" name="servings" value="{{ recipe.servings }}">
+                <input type="hidden" name="calories" value="{{ recipe.calories }}">
+                <input type="hidden" name="category" value="{{ recipe.category }}">
+                <input type="hidden" name="cuisine" value="{{ recipe.cuisine }}">
+                <input type="hidden" name="description" value="{{ recipe.description }}">
+                <input type="hidden" name="ingredients" value="{{ recipe.ingredients }}">
+                <input type="hidden" name="notes" value="{{ recipe.notes }}">
+
+                <button type="submit" class="save-del">Save Recipe</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+        <!-- <div class = rec-res>
+            <div class = Info tabindex="1"> 
+                <button>
+                    one   
+                </button>
+            </div>
+            <div class = Ingredients tabindex="2">
+                 <button>
+                    two
+                 </button>
+                </div>
+            <div class = Recipie-Info tabindex="3">
+                <button>
+                    three
+                </button>
+            </div>
+            <div class = Recipie tabindex="4">
+                <button>
+                    four
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->

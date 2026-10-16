@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "../static/js/search.js"></script>
+    <link rel="stylesheet" href="../static/css/master.css">
+    <title>AI-assisted Recipie Browser</title>
+</head>
+<body>
+    <div class = "navbar">
+        <container>
+            <left>
+                <img src = "../static/img/logo.png" id = logo alt="5byfive">
+                <a class = lB href="{{url_for('about')}}" > About</a>                
+                <a href="{{url_for('saved')}}" class = lB>Saved Recipies</a>
+                <a class = lB id = "active"> Search Recipies </a>
+            </left>
+
+                <form method="POST" action="{{url_for('search')}}" class ="search">
+                <input
+                    type = "text" 
+                    name="query" 
+                    class = "enter-field" 
+                    placeholder="Search for a recipe...">
+                
+                <button type = "submit" class = rBsearch>🔎︎</button>
+            </form>
+    
+        </container>
+    </div>
+
+    <div class="results">
+    </div>
+</body>
+</html>

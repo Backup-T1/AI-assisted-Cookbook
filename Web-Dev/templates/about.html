@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "../static/js/master.js"></script>
+    <link rel="stylesheet" href="../static/css/master.css">
+    <title>AI-assisted Recipie Browser</title>
+</head>
+<body>
+    <div class = "navbar">
+        <container>
+            <left>
+                <img src = "../static/img/logo.png" id = logo alt="5byfive">
+                <a class = lB id = "active"> About </a>
+                <a href="{{url_for('saved')}}" class = lB>Saved Recipies</a>
+                <a class = lB href="{{url_for('search')}}"> Search Recipies </a>
+
+            </left>
+        </container>
+    </div>
+    <div class="results">
+        <div class = about-res>
+            
+            <h3> Welcome to the AI-assisted Recipie Browser</h3>
+
+            <br>
+            At this webpage, you can do the following:
+            <br>
+            <ul class = details>
+                <li>
+                    Browse The Web for various Food Recipies
+                </li>
+                <li>
+                    Save and View Saved Food Recipies
+                </li>
+                <li>
+                    Use Motion Controls to navigate the webpage
+                </li>
+            </ul>
+            
+            <br>
+            To begin, click "Search Recipies" and search for a recipie, then hit the load button on whichever recipie you prefer. 
+            <br>
+            Alternatively, you may choose to load a saved recipie from "Saved Recipies".
+            <br>
+            [details about the motion control opperations later]
+            <br>
+
+            <br><br>
+            <br><br>
+            <br><br>
+
+            This website was developed by Group 5byfive, a group of students who made a website for a class project.
+
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>
