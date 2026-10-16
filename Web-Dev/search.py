@@ -46,7 +46,7 @@ Use a stable recipe-style URL slug.
 If a field is unknown, still provide a reasonable value.
 """ 
     if not query or len(query) > 100:
-        return "Invalid input"
+        return {"error": "Invalid input"}
 
     response = client.models.generate_content(
         model="gemini-3-flash-preview",
@@ -56,6 +56,9 @@ If a field is unknown, still provide a reasonable value.
             response_json_schema=RECIPE_SCHEMA,
         ),
     )
+
+    if not response.text:
+        raise ValueError("Gemini returned an empty response")
 
     recipe_data = json.loads(response.text)
 
