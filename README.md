@@ -92,8 +92,8 @@ This application uses Google's Gemini API to generate structured recipe informat
    ```bash
    export GEMINI_API_KEY="your_api_key"
    ```
-
-(Replace the placeholder with your own API key).
+   
+   (Replace the placeholder with your own API key).
 
 4. Start the Flask application:
 
