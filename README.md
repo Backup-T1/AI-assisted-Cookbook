@@ -1,2 +1,6 @@
 # AI-assisted-Cookbook
-Collaborative Final project where we implemented an AI cookbook assistant application capable of getting many recipes and outputting them step-by-step with additional nutritional information. Motion controls added to create handsfree interaction, such as scrolling up and down by simply using the motion of your finger.
+This repository showcases my original Gemini AI integration developed as part of a five-person final project for a Human Computer Interaction Course.
+
+My contributions included integrating Google's Gemini API with an associated API key, designing a JSON response schema, and testing and debugging generated recipe outputs to meet project requirements.
+
+This version predates the team's final motion-control integration.
